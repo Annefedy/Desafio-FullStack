@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+
 const DataSchema = new mongoose.Schema({
     nome_produto: String,
     descricao_produto: String,

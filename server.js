@@ -8,9 +8,8 @@ const routes = require('./src/routes')
 const app = express();
 const port = 5000;
 
+mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost:27017/unicad',{
-   
-    
 },function(err){
     if(err){
         console.log(err)

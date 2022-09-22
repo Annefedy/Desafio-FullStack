@@ -1,7 +1,6 @@
-import React from "react";
+import React , {Component, Fragment} from 'react';
 
-
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 // IMPORTS ADMIN
 import Dashboard  from "./pages/admin/dashboard";
@@ -18,10 +17,12 @@ import UsuarioCadastrar from "./pages/admin/usuarios/usuario.cadastrar";
 import Home from './pages/cliente/home'
 import ProdutosDetalhes from './pages/cliente/produtos/produtos.detalhes'
 
-export default function Rotas() {
-  return (
-    <BrowserRouter>
-      <Routes>
+export default class Routing extends Component {
+  render(){
+      return(
+          <BrowserRouter>
+          <Fragment>
+              <Routes>
              {/* ROTA CLIENTE */}
                     <Route path= '/'  element={<Home/>} />
                     <Route path="/Produtos/:idProdutos"  element={<ProdutosDetalhes/>} />
@@ -36,12 +37,9 @@ export default function Rotas() {
                     <Route path="/admin/usuarios"  element={<Usuarios/>} />
                     <Route path="/admin/usuarios/cadastrar"  element={<UsuarioCadastrar/>} />
                     <Route path="/admin/usuarios/editar/:idProduto" element={<UsuarioEditar/>} />
-
-    </Routes>
-  </BrowserRouter>
-);
+                    </Routes>
+                 </Fragment>
+                 </BrowserRouter>
+ );
 }
-
-
-
-   
+}
