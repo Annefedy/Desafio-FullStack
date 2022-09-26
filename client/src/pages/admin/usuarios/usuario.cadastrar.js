@@ -26,10 +26,10 @@ const mdTheme = createTheme();
   const [tipo, setTipo] = useState('');
 
   async  function handleSubmit(){
-    const data = {nome: nome,
-                email: email,
-                senha:senha,
-                tipo: tipo}
+    const data = {nome_usuario: nome,
+                email_usuario: email,
+                senha_usuario:senha,
+                tipo_usuario: tipo}
     if (nome !== '' && email !== '' && senha !== '' && tipo !== ''){
       const response = await api.post('/api/usuarios', data)
       if (response.status === 200) {
@@ -74,7 +74,7 @@ const mdTheme = createTheme();
                           required
                           id="nome"
                           name="nome"
-                          label="Nome Completo"
+                          label="Nome Usuário"
                           fullWidth
                           autoComplete="nome"
                           variant="standard"
@@ -127,9 +127,7 @@ const mdTheme = createTheme();
                         />
                       </Grid>
                       <Grid item xs={12} sm={12}>
-                        <Button variant="contained" onClick={handleSubmit}>
-                          Salvar
-                          </Button>
+                        <Button variant="contained" onClick={handleSubmit}>Salvar</Button>
                       </Grid>
                     </Grid>
                   </Paper>

@@ -1,9 +1,11 @@
 import React , {Component, Fragment} from 'react';
 
+
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 // IMPORTS ADMIN
 import Dashboard  from "./pages/admin/dashboard";
+//<Header />
 
 import Produtos from "./pages/admin/produtos";
 import ProdutoEditar from "./pages/admin/produtos/produtos.editar";
@@ -12,6 +14,13 @@ import ProdutoCadastrar from "./pages/admin/produtos/produtos.cadastrar";
 import Usuarios from "./pages/admin/usuarios";
 import UsuarioEditar from "./pages/admin/usuarios/usuarios.editar";
 import UsuarioCadastrar from "./pages/admin/usuarios/usuario.cadastrar";
+
+
+import Header from './pages/admin/deliveries/important/Header'
+import DeliveriesList from './pages/admin/deliveries/deliveries.list'
+import Delivery from './pages/admin/deliveries/index'
+import CreateDelivery from './pages/admin/deliveries/deliveries.cadastrar'
+
 
 //IMPORTS CLIENT
 import Home from './pages/cliente/home'
@@ -37,6 +46,10 @@ export default class Routing extends Component {
                     <Route path="/admin/usuarios"  element={<Usuarios/>} />
                     <Route path="/admin/usuarios/cadastrar"  element={<UsuarioCadastrar/>} />
                     <Route path="/admin/usuarios/editar/:idProduto" element={<UsuarioEditar/>} />
+
+                    <Route path="/admin/deliveries"  element={<Delivery/>} />
+                    <Route path="/admin/deliveries/cadastrar"  element={<CreateDelivery/>} />
+                    <Route path="/admin/deliveries/editar/:idEntrega" element={<DeliveriesList/>} />
                     </Routes>
                  </Fragment>
                  </BrowserRouter>

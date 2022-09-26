@@ -34,7 +34,7 @@ const mdTheme = createTheme();
       setNome(response.data.nome);
       setEmail(response.data.email);
       setTipo(response.data.tipo);
-      setSenha(response.data.senh);
+      setSenha(response.data.senha);
     }
     getUsuario();
   }, []);

@@ -2,8 +2,9 @@ const express = require('express');
 
 const routes = express.Router();
 
-const Usuario = require('./controllers/usuarios.controllers')
-const Produto = require('./controllers/produtos.controllers')
+const Usuario = require('./controllers/usuarios.controllers');
+const Produto = require('./controllers/produtos.controllers');
+const Delivery = require('./controllers/deliveries.controller');
 
 routes.get('/',Usuario.index);
 
@@ -20,5 +21,12 @@ routes.get('/api/produtos',  Produto.index);
 routes.get('/api/produtos.detalhes/:_id',  Produto.detalhes)
 routes.delete('/api/produtos/:_id',  Produto.deletar)
 routes.put('/api/produtos',  Produto.update)
+
+//Rotas de Deliveries
+routes.post('/api/deliveries',  Delivery.create);
+routes.get('/api/deliveries', Delivery.index);
+routes.get('/api/deliveries.detalhes/:_id',  Delivery.detalhes)
+routes.delete('/api/deliveries/:_id',  Delivery.deletar)
+routes.put('/api/deliveries',  Delivery.update)
 
 module.exports = routes;
